@@ -1,0 +1,161 @@
+[
+  {
+    "id": "dev-lenovo-s540-14api",
+    "brand": "Lenovo",
+    "model": "IdeaPad S540-14API",
+    "type": "Laptop",
+    "serial": "MP1L968Y",
+    "location": "Oficina Metagroup",
+    "imageUrl": "img/lenovo_s540.jpg",
+    "driverUrl": "https://pcsupport.lenovo.com/products/laptops-and-netbooks/ideapad-s-series-laptops/s540-14api/81nh/downloads",
+    "windowsUser": "metagroup\\jperez",
+    "windowsPassword": "MetaGroup2026!",
+    "notes": "Model Name: 81NH | MTM: 81NH000PCL | MO: MPNXB9610019 | Mfg Date: 2019-06-14 | ID Fábrica: PRC4 | Entrada: 20V 3.25A (65W) | Origen: China para Lenovo PC HK Limited.",
+    "observaciones": "Equipo asignado con suite Office y antivirus corporativo. Chasis de aluminio en perfecto estado.",
+    "specs": {
+      "cpu": {
+        "model": "AMD Ryzen 5 3500U",
+        "cores": "4 Núcleos / 8 Hilos",
+        "speed": "2100 MHz Base / 3700 MHz Boost",
+        "year": 2019,
+        "details": "12nm FinFET, 4MB Caché L3, TDP 15W"
+      },
+      "ram": {
+        "capacity": "12 GB",
+        "type": "DDR4",
+        "speed": "2400 MHz",
+        "details": "4 GB soldados en placa + 8 GB en módulo SO-DIMM (Dual-Channel)"
+      },
+      "gpu": {
+        "model": "AMD Radeon Vega 8 Graphics",
+        "type": "Integrada",
+        "details": "8 núcleos gráficos (1200 MHz), memoria compartida"
+      },
+      "storage": "256 GB SSD M.2 PCIe NVMe"
+    },
+    "updatedAt": "2026-09-10"
+  },
+  {
+    "id": "dev-lenovo-s540-14api-2",
+    "brand": "Lenovo",
+    "model": "IdeaPad S540-14API",
+    "type": "Laptop",
+    "serial": "MP1MXEKF",
+    "location": "Oficina Metagroup",
+    "imageUrl": "img/lenovo_s540.jpg",
+    "driverUrl": "https://pcsupport.lenovo.com/products/laptops-and-netbooks/ideapad-s-series-laptops/s540-14api/81nh/downloads",
+    "windowsUser": "metagroup\\usuario2",
+    "windowsPassword": "MetaGroup2026!",
+    "notes": "Model Name: 81NH | MTM: 81NH000PCL | MO: MPNXB98270CD | Mfg Date: 2019-08-27 | ID Fábrica: PRC4 | Entrada: 20V 3.25A (65W) | Origen: China para Lenovo PC HK Limited.",
+    "observaciones": "Equipo en excelente estado. Chasis de aluminio corte diamante. Mantenimiento al día.",
+    "specs": {
+      "cpu": {
+        "model": "AMD Ryzen 5 3500U",
+        "cores": "4 Núcleos / 8 Hilos",
+        "speed": "2100 MHz Base / 3700 MHz Boost",
+        "year": 2019,
+        "details": "12nm FinFET, 4MB Caché L3, TDP 15W"
+      },
+      "ram": {
+        "capacity": "12 GB",
+        "type": "DDR4",
+        "speed": "2400 MHz",
+        "details": "4 GB soldados en placa + 8 GB en módulo SO-DIMM (Dual-Channel)"
+      },
+      "gpu": {
+        "model": "AMD Radeon Vega 8 Graphics",
+        "type": "Integrada",
+        "details": "8 núcleos gráficos (1200 MHz), memoria compartida"
+      },
+      "storage": "256 GB SSD M.2 PCIe NVMe"
+    },
+    "updatedAt": "2026-09-10"
+  },
+  {
+    "id": "dev-lenovo-flex5-14are05",
+    "brand": "Lenovo",
+    "model": "IdeaPad Flex 5 14ARE05",
+    "type": "Laptop",
+    "serial": "R9126WCC",
+    "location": "Oficina Metagroup",
+    "imageUrl": "img/lenovo_flex5.jpg",
+    "driverUrl": "https://pcsupport.lenovo.com/products/laptops-and-netbooks/flex-series/flex-5-14are05/81x2/downloads",
+    "windowsUser": "metagroup\\flex5",
+    "windowsPassword": "MetaFlex*2026",
+    "notes": "Línea: IdeaPad Flex | Model Name: 81X2 | MTM: 81X200E2CC | MO: R9N0B132600B | Mfg Date: 2021-03-26 | ID Fábrica: KS | Entrada: 20V 3.25A (65W) | Origen: Fabricado en China para Lenovo.",
+    "observaciones": "Equipo convertible con pantalla táctil. Incluye cargador original de 65W.",
+    "specs": {
+      "cpu": {
+        "model": "AMD Ryzen 5 4500U",
+        "cores": "6 Núcleos / 6 Hilos",
+        "speed": "2300 MHz Base / 4000 MHz Boost",
+        "year": 2020,
+        "details": "7nm Zen 2 (Renoir), 8MB Caché L3, TDP 15W"
+      },
+      "ram": {
+        "capacity": "8 GB",
+        "type": "DDR4",
+        "speed": "3200 MHz",
+        "details": "Memoria soldada en placa madre (Dual-Channel)"
+      },
+      "gpu": {
+        "model": "AMD Radeon Graphics (Renoir)",
+        "type": "Integrada",
+        "details": "6 núcleos gráficos (1500 MHz), memoria compartida"
+      },
+      "storage": "512 GB SSD M.2 2280 PCIe 3.0x4 NVMe"
+    },
+    "updatedAt": "2026-09-10"
+  },
+  {
+    "id": "dev-lenovo-s540-hector",
+    "brand": "Lenovo",
+    "model": "IdeaPad S540-14API",
+    "type": "Laptop",
+    "serial": "MP1L972A",
+    "location": "Héctor / Oficina Metagroup",
+    "imageUrl": "img/lenovo_s540.jpg",
+    "driverUrl": "https://pcsupport.lenovo.com/products/laptops-and-netbooks/ideapad-s-series-laptops/s540-14api/81nh/downloads",
+    "windowsUser": "metagroup\\hector",
+    "windowsPassword": "MetaGroup2026!",
+    "notes": "Model Name: 81NH | MTM: 81NH000PCL | MO: MPNXB9610019 | Mfg Date: 2019-06-14 | ID Fábrica: PRC4 | Entrada: 20V 3.25A (65W) | Origen: Fabricado en China para Lenovo PC HK Limited.",
+    "observaciones": "Equipo asignado al usuario Héctor. Chasis de aluminio en óptimas condiciones. Configuración y antivirus corporativo al día.",
+    "specs": {
+      "cpu": {
+        "model": "AMD Ryzen 5 3500U",
+        "cores": "4 Núcleos / 8 Hilos",
+        "speed": "2100 MHz Base / 3700 MHz Boost",
+        "year": 2019,
+        "details": "12nm FinFET, 4MB Caché L3, TDP 15W"
+      },
+      "ram": {
+        "capacity": "12 GB",
+        "type": "DDR4",
+        "speed": "2400 MHz",
+        "details": "4 GB soldados en placa + 8 GB en módulo SO-DIMM (Dual-Channel)"
+      },
+      "gpu": {
+        "model": "AMD Radeon Vega 8 Graphics",
+        "type": "Integrada",
+        "details": "8 núcleos gráficos (1200 MHz), memoria compartida"
+      },
+      "storage": "256 GB SSD M.2 PCIe NVMe"
+    },
+    "updatedAt": "2026-09-10"
+  },
+  {
+    "id": "dev-brother-hll2360dw",
+    "brand": "Brother",
+    "model": "HL-L2360DW",
+    "type": "Impresora",
+    "serial": "E74288J6N123456",
+    "location": "Oficina Central / Metagroup",
+    "imageUrl": "img/brother_hl_l2360dw.jpg",
+    "driverUrl": "https://support.brother.com/g/b/downloadlist.aspx?c=mx&lang=es&prod=hll2360dw_us&os=10068",
+    "windowsUser": "",
+    "windowsPassword": "",
+    "notes": "Impresora láser monocromática dúplex con conectividad Wi-Fi y Ethernet. Compatible con paquetes de controladores Brother y CUPS.",
+    "observaciones": "Impresora compartida por red cableada y Wi-Fi en recepción. Tóner al 85%.",
+    "updatedAt": "2026-09-10"
+  }
+]
