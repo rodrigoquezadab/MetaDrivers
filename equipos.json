@@ -34,6 +34,12 @@
       },
       "storage": "256 GB SSD M.2 PCIe NVMe"
     },
+    "officeLicense": {
+      "status": "Activa",
+      "type": "Microsoft 365 Business Standard",
+      "deactivationDate": "",
+      "notes": "Licencia Office corporativa activa"
+    },
     "updatedAt": "2026-09-10",
     "mfgDate": "2019-06-14"
   },
@@ -71,6 +77,12 @@
         "details": "8 núcleos gráficos (1200 MHz), memoria compartida"
       },
       "storage": "256 GB SSD M.2 PCIe NVMe"
+    },
+    "officeLicense": {
+      "status": "Activa",
+      "type": "Microsoft 365 Business Standard",
+      "deactivationDate": "",
+      "notes": "Licencia Office corporativa activa"
     },
     "updatedAt": "2026-09-10",
     "mfgDate": "2019-08-27",
@@ -122,6 +134,12 @@
       },
       "storage": "512 GB SSD M.2 2280 PCIe 3.0x4 NVMe"
     },
+    "officeLicense": {
+      "status": "Activa",
+      "type": "Microsoft 365 Business Standard",
+      "deactivationDate": "",
+      "notes": "Licencia Office corporativa activa"
+    },
     "updatedAt": "2026-09-10",
     "mfgDate": "2021-03-26"
   },
@@ -160,6 +178,12 @@
       },
       "storage": "512 GB SSD M.2 2280 PCIe 3.0x4 NVMe"
     },
+    "officeLicense": {
+      "status": "Activa",
+      "type": "Microsoft 365 Business Standard",
+      "deactivationDate": "",
+      "notes": "Licencia Office corporativa activa"
+    },
     "updatedAt": "2026-09-10",
     "mfgDate": "2021 (Lanzamiento serie: 2020)"
   },
@@ -197,6 +221,12 @@
         "details": "8 núcleos gráficos (1200 MHz), memoria compartida"
       },
       "storage": "256 GB SSD M.2 PCIe NVMe"
+    },
+    "officeLicense": {
+      "status": "Activa",
+      "type": "Microsoft 365 Business Standard",
+      "deactivationDate": "",
+      "notes": "Licencia Office corporativa activa"
     },
     "updatedAt": "2026-09-10",
     "mfgDate": "2019-06-14",

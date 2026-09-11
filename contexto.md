@@ -64,6 +64,10 @@ La base de datos principal estructurada reside en el archivo [`equipos.json`](fi
     - *Características:* 8 núcleos de cómputo GPU (1200 MHz), memoria de video compartida
   - **Almacenamiento:** 256 GB SSD M.2 PCIe NVMe
 - **Enlace de Drivers:** [Lenovo PC Support - IdeaPad S540-14API (Type 81NH)](https://pcsupport.lenovo.com/products/laptops-and-netbooks/ideapad-s-series-laptops/s540-14api/81nh/downloads)
+- **Licencia Microsoft Office:**
+  - *Estado:* Activa
+  - *Tipo / Versión:* Microsoft 365 Business Standard
+  - *Observaciones / Cuenta:* Licencia Office corporativa activa
 - **Observaciones:** Equipo asignado con suite Office y antivirus corporativo. Chasis de aluminio en perfecto estado.
 
 ---
@@ -101,6 +105,10 @@ La base de datos principal estructurada reside en el archivo [`equipos.json`](fi
     - *Características:* 8 núcleos de cómputo GPU (1200 MHz), memoria de video compartida
   - **Almacenamiento:** 256 GB SSD M.2 PCIe NVMe
 - **Enlace de Drivers:** [Lenovo PC Support - IdeaPad S540-14API (Type 81NH)](https://pcsupport.lenovo.com/products/laptops-and-netbooks/ideapad-s-series-laptops/s540-14api/81nh/downloads)
+- **Licencia Microsoft Office:**
+  - *Estado:* Activa
+  - *Tipo / Versión:* Microsoft 365 Business Standard
+  - *Observaciones / Cuenta:* Licencia Office corporativa activa
 - **Observaciones:** Equipo en excelente estado. Chasis de aluminio corte diamante. Mantenimiento al día.
 - **Fotografías del Equipo:**
   - `img/s540_mp1mxekf_serie.jpg`: *Serie (MP1MXEKF) e Input 20V*
@@ -141,6 +149,10 @@ La base de datos principal estructurada reside en el archivo [`equipos.json`](fi
     - *Características:* 8 núcleos de cómputo GPU (1200 MHz), memoria de video compartida
   - **Almacenamiento:** 256 GB SSD M.2 PCIe NVMe
 - **Enlace de Drivers:** [Lenovo PC Support - IdeaPad S540-14API (Type 81NH)](https://pcsupport.lenovo.com/products/laptops-and-netbooks/ideapad-s-series-laptops/s540-14api/81nh/downloads)
+- **Licencia Microsoft Office:**
+  - *Estado:* Activa
+  - *Tipo / Versión:* Microsoft 365 Business Standard
+  - *Observaciones / Cuenta:* Licencia Office corporativa activa
 - **Observaciones:** Equipo asignado al usuario Héctor. Chasis de aluminio en óptimas condiciones. Configuración y antivirus corporativo al día.
 - **Fotografías del Equipo:**
   - `img/hector_s540_modelo.jpg`: *Modelo y MTM (81NH / 81NH000PCL)*
@@ -182,6 +194,10 @@ La base de datos principal estructurada reside en el archivo [`equipos.json`](fi
     - *Características:* 6 núcleos de cómputo GPU (1500 MHz), memoria de video compartida
   - **Almacenamiento:** 512 GB SSD M.2 2280 PCIe 3.0x4 NVMe
 - **Enlace de Drivers:** [Lenovo PC Support - Flex 5-14ARE05 (Type 81X2)](https://pcsupport.lenovo.com/products/laptops-and-netbooks/flex-series/flex-5-14are05/81x2/downloads)
+- **Licencia Microsoft Office:**
+  - *Estado:* Activa
+  - *Tipo / Versión:* Microsoft 365 Business Standard
+  - *Observaciones / Cuenta:* Licencia Office corporativa activa
 - **Observaciones:** Equipo convertible asignado a Zeta con pantalla táctil. Incluye cargador original de 65W.
 
 ---
@@ -216,6 +232,10 @@ La base de datos principal estructurada reside en el archivo [`equipos.json`](fi
     - *Características:* 6 núcleos de cómputo GPU (1500 MHz), memoria de video compartida
   - **Almacenamiento:** 512 GB SSD M.2 2280 PCIe 3.0x4 NVMe
 - **Enlace de Drivers:** [Lenovo PC Support - Flex 5-14ARE05 (Type 81X2)](https://pcsupport.lenovo.com/products/laptops-and-netbooks/flex-series/flex-5-14are05/81x2/downloads)
+- **Licencia Microsoft Office:**
+  - *Estado:* Activa
+  - *Tipo / Versión:* Microsoft 365 Business Standard
+  - *Observaciones / Cuenta:* Licencia Office corporativa activa
 - **Observaciones:** Equipo convertible idéntico asignado a Isa. Chasis y pantalla táctil. Pendiente registrar números de serie y etiquetas.
 
 ---

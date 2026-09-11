@@ -40,6 +40,12 @@ const DEFAULT_DEVICES = [
       },
       storage: "256 GB SSD M.2 PCIe NVMe"
     },
+    officeLicense: {
+      status: "Activa",
+      type: "Microsoft 365 Business Standard",
+      deactivationDate: "",
+      notes: "Licencia Office corporativa activa"
+    },
     mfgDate: "2019-06-14",
     updatedAt: "2026-09-10"
   },
@@ -77,6 +83,12 @@ const DEFAULT_DEVICES = [
         details: "6 núcleos gráficos (1500 MHz), memoria compartida"
       },
       storage: "512 GB SSD M.2 2280 PCIe 3.0x4 NVMe"
+    },
+    officeLicense: {
+      status: "Activa",
+      type: "Microsoft 365 Business Standard",
+      deactivationDate: "",
+      notes: "Licencia Office corporativa activa"
     },
     mfgDate: "2021-03-26",
     updatedAt: "2026-09-10"
@@ -116,6 +128,12 @@ const DEFAULT_DEVICES = [
       },
       storage: "512 GB SSD M.2 2280 PCIe 3.0x4 NVMe"
     },
+    officeLicense: {
+      status: "Activa",
+      type: "Microsoft 365 Business Standard",
+      deactivationDate: "",
+      notes: "Licencia Office corporativa activa"
+    },
     mfgDate: "2021 (Lanzamiento serie: 2020)",
     updatedAt: "2026-09-10"
   },
@@ -153,6 +171,12 @@ const DEFAULT_DEVICES = [
         details: "8 núcleos gráficos (1200 MHz), memoria compartida"
       },
       storage: "256 GB SSD M.2 PCIe NVMe"
+    },
+    officeLicense: {
+      status: "Activa",
+      type: "Microsoft 365 Business Standard",
+      deactivationDate: "",
+      notes: "Licencia Office corporativa activa"
     },
     mfgDate: "2019-08-27",
     updatedAt: "2026-09-10",
@@ -203,6 +227,12 @@ const DEFAULT_DEVICES = [
         details: "8 núcleos gráficos (1200 MHz), memoria compartida"
       },
       storage: "256 GB SSD M.2 PCIe NVMe"
+    },
+    officeLicense: {
+      status: "Activa",
+      type: "Microsoft 365 Business Standard",
+      deactivationDate: "",
+      notes: "Licencia Office corporativa activa"
     },
     mfgDate: "2019-06-14",
     updatedAt: "2026-09-10",
@@ -311,6 +341,12 @@ const formWindowsUser = document.getElementById("form-windows-user");
 const formWindowsPass = document.getElementById("form-windows-pass");
 const btnToggleModalPass = document.getElementById("btn-toggle-modal-pass");
 
+// Licenciamiento Office
+const formOfficeStatus = document.getElementById("form-office-status");
+const formOfficeType = document.getElementById("form-office-type");
+const formOfficeDeactivationDate = document.getElementById("form-office-deactivation-date");
+const formOfficeNotes = document.getElementById("form-office-notes");
+
 // Campos de Hardware (CPU, RAM, GPU, Storage)
 const formCpuModel = document.getElementById("form-cpu-model");
 const formCpuYear = document.getElementById("form-cpu-year");
@@ -336,6 +372,7 @@ const formDrumReplacedDate = document.getElementById("form-drum-replaced-date");
 const suppliesSection = document.getElementById("printer-supplies-section");
 const hardwareSection = document.getElementById("hardware-section");
 const credentialsSection = document.getElementById("credentials-section");
+const officeSection = document.getElementById("office-section");
 
 
 // Botones de acción general y configuración
@@ -463,6 +500,19 @@ async function loadDevices() {
               updated = true;
             }
           }
+        }
+      });
+
+      // Sincronizar officeLicense en equipos de localStorage si aún no lo tienen
+      devices.forEach((dev) => {
+        if (dev.type !== "Impresora" && !dev.officeLicense) {
+          dev.officeLicense = {
+            status: "Activa",
+            type: "Microsoft 365 Business Standard",
+            deactivationDate: "",
+            notes: "Licencia Office corporativa activa"
+          };
+          updated = true;
         }
       });
 
@@ -809,7 +859,8 @@ function getFilteredDevices() {
         specsText = `${dev.specs.cpu?.model || ""} ${dev.specs.cpu?.details || ""} ${dev.specs.ram?.capacity || ""} ${dev.specs.ram?.type || ""} ${dev.specs.gpu?.model || ""} ${dev.specs.gpu?.type || ""}`;
       }
       const credsText = `${dev.windowsUser || ""} ${dev.observaciones || ""}`;
-      const target = `${dev.brand} ${dev.model} ${dev.type} ${dev.serial || ""} ${dev.mfgDate || ""} ${dev.assignedUser || ""} ${dev.location || ""} ${dev.notes || ""} ${specsText} ${credsText}`.toLowerCase();
+      const officeText = dev.officeLicense ? `${dev.officeLicense.status || ""} ${dev.officeLicense.type || ""} ${dev.officeLicense.notes || ""}` : "";
+      const target = `${dev.brand} ${dev.model} ${dev.type} ${dev.serial || ""} ${dev.mfgDate || ""} ${dev.assignedUser || ""} ${dev.location || ""} ${dev.notes || ""} ${specsText} ${credsText} ${officeText}`.toLowerCase();
       if (!target.includes(searchQuery)) {
         return false;
       }
@@ -1031,6 +1082,68 @@ function buildCredentialsHtml(dev) {
         </div>
       </div>
       ` : ""}
+    </div>
+  `;
+}
+
+/**
+ * Generar bloque visual para Licenciamiento de Microsoft Office
+ */
+function buildOfficeLicenseHtml(dev) {
+  if (dev.type === "Impresora" || !dev.officeLicense) {
+    return "";
+  }
+
+  const lic = dev.officeLicense;
+  const status = lic.status || "Sin Licencia";
+  const type = lic.type || "No especificado";
+  const deactivationDate = lic.deactivationDate || "";
+  const notes = lic.notes || "";
+
+  let badgeClass = "badge-office-none";
+  let statusIcon = "⚪";
+  if (status === "Activa") {
+    badgeClass = "badge-office-active";
+    statusIcon = "🟢";
+  } else if (status === "Desactivada") {
+    badgeClass = "badge-office-inactive";
+    statusIcon = "🔴";
+  } else if (status === "Pendiente") {
+    badgeClass = "badge-office-pending";
+    statusIcon = "🟡";
+  }
+
+  return `
+    <div class="device-office-box">
+      <div class="office-box-header">
+        <div class="office-header-title">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+            <line x1="9" y1="3" x2="9" y2="21"></line>
+          </svg>
+          <span>Licenciamiento Microsoft Office</span>
+        </div>
+        <span class="${badgeClass}">${statusIcon} ${escapeHtml(status)}</span>
+      </div>
+
+      <div class="detail-meta-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.5rem 1rem; margin-top: 0.2rem;">
+        <div class="detail-meta-item">
+          <span class="detail-meta-label">Versión / Edición:</span>
+          <span class="detail-meta-value"><strong>${escapeHtml(type)}</strong></span>
+        </div>
+        ${deactivationDate ? `
+        <div class="detail-meta-item">
+          <span class="detail-meta-label">Fecha de Desactivación:</span>
+          <span class="detail-meta-value" style="color: #fca5a5; font-weight: 600;">📅 ${escapeHtml(deactivationDate)}</span>
+        </div>
+        ` : ""}
+        ${notes ? `
+        <div class="detail-meta-item" style="grid-column: 1 / -1;">
+          <span class="detail-meta-label">Cuenta / Observación de Licencia:</span>
+          <span class="detail-meta-value">${escapeHtml(notes)}</span>
+        </div>
+        ` : ""}
+      </div>
     </div>
   `;
 }
@@ -1395,6 +1508,21 @@ function buildCompactSpecsHtml(dev) {
     if (dev.specs?.gpu?.model && dev.specs.gpu.type?.toLowerCase().includes("dedicada")) {
       pills.push(`<span class="compact-spec-pill">🎮 ${escapeHtml(dev.specs.gpu.model)}</span>`);
     }
+
+    // Licencia Office
+    if (dev.officeLicense) {
+      const oStatus = dev.officeLicense.status;
+      const oType = dev.officeLicense.type || "Office";
+      const shortType = oType.replace("Microsoft 365", "M365").replace("Standard", "Std").replace("Business", "Biz");
+      if (oStatus === "Activa") {
+        pills.push(`<span class="compact-spec-pill pill-office-active" title="Licencia Office Activa: ${escapeHtml(dev.officeLicense.type || '')}">💼 ${escapeHtml(shortType)}</span>`);
+      } else if (oStatus === "Desactivada") {
+        const deactStr = dev.officeLicense.deactivationDate ? ` (${dev.officeLicense.deactivationDate})` : "";
+        pills.push(`<span class="compact-spec-pill pill-office-inactive" title="Licencia desactivada${escapeHtml(deactStr)}">⛔ Office Desact.${escapeHtml(deactStr)}</span>`);
+      } else if (oStatus === "Pendiente") {
+        pills.push(`<span class="compact-spec-pill pill-office-pending" title="Licencia Office pendiente de activación">🟡 Office Pendiente</span>`);
+      }
+    }
   }
 
   if (pills.length === 0 && dev.notes) {
@@ -1618,6 +1746,7 @@ window.openDeviceDetailModal = function (deviceId) {
   // Componentes modulares completos
   const specsHtml = buildSpecsHtml(dev.specs);
   const credsHtml = buildCredentialsHtml(dev);
+  const officeHtml = buildOfficeLicenseHtml(dev);
   const suppliesHtml = buildSuppliesHtml(dev);
   const photosHtml = buildDevicePhotosHtml(dev);
 
@@ -1707,6 +1836,7 @@ window.openDeviceDetailModal = function (deviceId) {
       ${heroHtml}
       ${!dev.imageUrl ? metaGridHtml : ""}
       ${credsHtml}
+      ${officeHtml}
       ${suppliesHtml}
       ${specsHtml}
       ${dev.imageUrl ? metaGridHtml : ""}
@@ -1804,6 +1934,19 @@ function openDeviceModal(device = null) {
       if (formDrumWarningDate) formDrumWarningDate.value = "";
       if (formDrumReplacedDate) formDrumReplacedDate.value = "";
     }
+
+    // Licencia Office
+    if (device.officeLicense) {
+      if (formOfficeStatus) formOfficeStatus.value = device.officeLicense.status || "Activa";
+      if (formOfficeType) formOfficeType.value = device.officeLicense.type || "";
+      if (formOfficeDeactivationDate) formOfficeDeactivationDate.value = toIsoDate(device.officeLicense.deactivationDate);
+      if (formOfficeNotes) formOfficeNotes.value = device.officeLicense.notes || "";
+    } else {
+      if (formOfficeStatus) formOfficeStatus.value = "Activa";
+      if (formOfficeType) formOfficeType.value = "Microsoft 365 Business Standard";
+      if (formOfficeDeactivationDate) formOfficeDeactivationDate.value = "";
+      if (formOfficeNotes) formOfficeNotes.value = "";
+    }
   } else {
     modalTitle.textContent = "Registrar Nuevo Equipo";
     formDeviceId.value = "";
@@ -1815,6 +1958,10 @@ function openDeviceModal(device = null) {
     if (formTonerReplacedDate) formTonerReplacedDate.value = "";
     if (formDrumWarningDate) formDrumWarningDate.value = "";
     if (formDrumReplacedDate) formDrumReplacedDate.value = "";
+    if (formOfficeStatus) formOfficeStatus.value = "Activa";
+    if (formOfficeType) formOfficeType.value = "Microsoft 365 Business Standard";
+    if (formOfficeDeactivationDate) formOfficeDeactivationDate.value = "";
+    if (formOfficeNotes) formOfficeNotes.value = "";
   }
   updateFormSectionsVisibility(device ? device.type : formType.value);
   deviceModal.classList.add("active");
@@ -1829,10 +1976,12 @@ function updateFormSectionsVisibility(type) {
     if (suppliesSection) suppliesSection.style.display = "block";
     if (hardwareSection) hardwareSection.style.display = "none";
     if (credentialsSection) credentialsSection.style.display = "none";
+    if (officeSection) officeSection.style.display = "none";
   } else {
     if (suppliesSection) suppliesSection.style.display = "none";
     if (hardwareSection) hardwareSection.style.display = "block";
     if (credentialsSection) credentialsSection.style.display = "block";
+    if (officeSection) officeSection.style.display = "block";
   }
 }
 
@@ -1925,6 +2074,22 @@ function handleFormSubmit(e) {
     };
   }
 
+  // Construir objeto de Licencia Office si aplica (no para impresora)
+  let officeLicense = null;
+  if (type !== "Impresora") {
+    const oStatus = formOfficeStatus ? formOfficeStatus.value : "Activa";
+    const oType = formOfficeType ? formOfficeType.value.trim() : "";
+    const oDeactDate = formOfficeDeactivationDate ? formOfficeDeactivationDate.value : "";
+    const oNotes = formOfficeNotes ? formOfficeNotes.value.trim() : "";
+
+    officeLicense = {
+      status: oStatus,
+      type: oType,
+      deactivationDate: oDeactDate,
+      notes: oNotes
+    };
+  }
+
   if (id) {
     // Editar existente
     const index = devices.findIndex((d) => d.id === id);
@@ -1946,6 +2111,7 @@ function handleFormSubmit(e) {
         observaciones,
         specs: specs || devices[index].specs,
         supplies: supplies !== null ? supplies : devices[index].supplies,
+        officeLicense: officeLicense !== null ? officeLicense : devices[index].officeLicense,
         updatedAt: today
       };
       showToast(`Equipo "${brand} ${model}" actualizado correctamente`);
@@ -1969,6 +2135,7 @@ function handleFormSubmit(e) {
       observaciones,
       specs: specs,
       supplies: supplies,
+      officeLicense: officeLicense,
       updatedAt: today
     };
     devices.unshift(newDevice);
@@ -2148,6 +2315,17 @@ function generateMarkdownContent() {
     }
     if (dev.observaciones) {
       md += `- **Observaciones:** ${dev.observaciones}\n`;
+    }
+    if (dev.officeLicense) {
+      md += `- **Licencia Microsoft Office:**\n`;
+      md += `  - *Estado:* ${dev.officeLicense.status || 'No especificado'}\n`;
+      md += `  - *Tipo / Versión:* ${dev.officeLicense.type || 'No especificado'}\n`;
+      if (dev.officeLicense.deactivationDate) {
+        md += `  - *Fecha de Desactivación:* ${dev.officeLicense.deactivationDate}\n`;
+      }
+      if (dev.officeLicense.notes) {
+        md += `  - *Observaciones / Cuenta:* ${dev.officeLicense.notes}\n`;
+      }
     }
     md += `\n`;
   });

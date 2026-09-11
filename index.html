@@ -438,6 +438,51 @@
           </div>
         </div>
 
+        <!-- Licencia de Microsoft Office -->
+        <div class="credentials-fieldset" id="office-section">
+          <div class="fieldset-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+              <line x1="9" y1="3" x2="9" y2="21"></line>
+            </svg>
+            <span>Licenciamiento Microsoft Office</span>
+          </div>
+          <div class="form-row">
+            <div class="form-group flex-1">
+              <label for="form-office-status">Estado de la Licencia</label>
+              <select id="form-office-status">
+                <option value="Activa">🟢 Activa</option>
+                <option value="Desactivada">🔴 Desactivada</option>
+                <option value="Sin Licencia">⚪ Sin Licencia / No instalada</option>
+                <option value="Pendiente">🟡 Pendiente de activación</option>
+              </select>
+            </div>
+            <div class="form-group flex-2">
+              <label for="form-office-type">Tipo / Versión de Licencia</label>
+              <input type="text" id="form-office-type" placeholder="Ej. Microsoft 365 Business Standard, Office 2021..." list="office-types-datalist">
+              <datalist id="office-types-datalist">
+                <option value="Microsoft 365 Business Standard">
+                <option value="Microsoft 365 Business Basic">
+                <option value="Microsoft 365 Apps for business">
+                <option value="Office 2021 Home & Business">
+                <option value="Office 2019 Home & Business">
+                <option value="Office Professional Plus 2021">
+              </datalist>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group flex-1">
+              <label for="form-office-deactivation-date">Fecha de Desactivación</label>
+              <input type="date" id="form-office-deactivation-date">
+              <span class="field-hint">Completar si la licencia fue desactivada o dada de baja.</span>
+            </div>
+            <div class="form-group flex-2">
+              <label for="form-office-notes">Cuenta / Clave o Notas de Licencia</label>
+              <input type="text" id="form-office-notes" placeholder="Ej. usuario@metagroup.cl o Clave: XXXXX-XXXXX...">
+            </div>
+          </div>
+        </div>
+
         <!-- Sección de Consumibles para Impresoras (Tóner y Tambor) -->
         <div class="supplies-fieldset" id="printer-supplies-section" style="display: none;">
           <div class="fieldset-title">
