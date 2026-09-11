@@ -5,6 +5,7 @@
     "model": "IdeaPad S540-14API",
     "type": "Laptop",
     "serial": "MP1L968Y",
+    "assignedUser": "Juan Pérez",
     "location": "Oficina Metagroup",
     "imageUrl": "img/lenovo_s540.jpg",
     "driverUrl": "https://pcsupport.lenovo.com/products/laptops-and-netbooks/ideapad-s-series-laptops/s540-14api/81nh/downloads",
@@ -33,7 +34,8 @@
       },
       "storage": "256 GB SSD M.2 PCIe NVMe"
     },
-    "updatedAt": "2026-09-10"
+    "updatedAt": "2026-09-10",
+    "mfgDate": "2019-06-14"
   },
   {
     "id": "dev-lenovo-s540-14api-2",
@@ -41,6 +43,7 @@
     "model": "IdeaPad S540-14API",
     "type": "Laptop",
     "serial": "MP1MXEKF",
+    "assignedUser": "Usuario 2",
     "location": "Oficina Metagroup",
     "imageUrl": "img/lenovo_s540.jpg",
     "driverUrl": "https://pcsupport.lenovo.com/products/laptops-and-netbooks/ideapad-s-series-laptops/s540-14api/81nh/downloads",
@@ -69,7 +72,20 @@
       },
       "storage": "256 GB SSD M.2 PCIe NVMe"
     },
-    "updatedAt": "2026-09-10"
+    "updatedAt": "2026-09-10",
+    "mfgDate": "2019-08-27",
+    "images": [
+      {
+        "id": "img-s540-mp1mxekf-serie",
+        "name": "Serie (MP1MXEKF) e Input 20V",
+        "url": "img/s540_mp1mxekf_serie.jpg"
+      },
+      {
+        "id": "img-s540-mp1mxekf-modelo",
+        "name": "Modelo, MTM y MO (81NH / MPNXB98270CD)",
+        "url": "img/s540_mp1mxekf_modelo.jpg"
+      }
+    ]
   },
   {
     "id": "dev-lenovo-flex5-14are05",
@@ -77,13 +93,14 @@
     "model": "IdeaPad Flex 5 14ARE05",
     "type": "Laptop",
     "serial": "R9126WCC",
+    "assignedUser": "Zeta",
     "location": "Oficina Metagroup",
     "imageUrl": "img/lenovo_flex5.jpg",
     "driverUrl": "https://pcsupport.lenovo.com/products/laptops-and-netbooks/flex-series/flex-5-14are05/81x2/downloads",
-    "windowsUser": "metagroup\\flex5",
+    "windowsUser": "metagroup\\zeta",
     "windowsPassword": "MetaFlex*2026",
     "notes": "Línea: IdeaPad Flex | Model Name: 81X2 | MTM: 81X200E2CC | MO: R9N0B132600B | Mfg Date: 2021-03-26 | ID Fábrica: KS | Entrada: 20V 3.25A (65W) | Origen: Fabricado en China para Lenovo.",
-    "observaciones": "Equipo convertible con pantalla táctil. Incluye cargador original de 65W.",
+    "observaciones": "Equipo convertible asignado a Zeta con pantalla táctil. Incluye cargador original de 65W.",
     "specs": {
       "cpu": {
         "model": "AMD Ryzen 5 4500U",
@@ -105,7 +122,46 @@
       },
       "storage": "512 GB SSD M.2 2280 PCIe 3.0x4 NVMe"
     },
-    "updatedAt": "2026-09-10"
+    "updatedAt": "2026-09-10",
+    "mfgDate": "2021-03-26"
+  },
+  {
+    "id": "dev-lenovo-flex5-isa",
+    "brand": "Lenovo",
+    "model": "IdeaPad Flex 5 14ARE05",
+    "type": "Laptop",
+    "serial": "",
+    "assignedUser": "Isa",
+    "location": "Oficina Metagroup",
+    "imageUrl": "img/lenovo_flex5.jpg",
+    "driverUrl": "https://pcsupport.lenovo.com/products/laptops-and-netbooks/flex-series/flex-5-14are05/81x2/downloads",
+    "windowsUser": "metagroup\\isa",
+    "windowsPassword": "MetaFlex*2026",
+    "notes": "Línea: IdeaPad Flex | Model Name: 81X2 | Entrada: 20V 3.25A (65W) | Origen: Fabricado en China para Lenovo. (Número de serie pendiente de registrar)",
+    "observaciones": "Equipo convertible idéntico asignado a Isa. Chasis y pantalla táctil. Pendiente registrar números de serie.",
+    "specs": {
+      "cpu": {
+        "model": "AMD Ryzen 5 4500U",
+        "cores": "6 Núcleos / 6 Hilos",
+        "speed": "2300 MHz Base / 4000 MHz Boost",
+        "year": 2020,
+        "details": "7nm Zen 2 (Renoir), 8MB Caché L3, TDP 15W"
+      },
+      "ram": {
+        "capacity": "8 GB",
+        "type": "DDR4",
+        "speed": "3200 MHz",
+        "details": "Memoria soldada en placa madre (Dual-Channel)"
+      },
+      "gpu": {
+        "model": "AMD Radeon Graphics (Renoir)",
+        "type": "Integrada",
+        "details": "6 núcleos gráficos (1500 MHz), memoria compartida"
+      },
+      "storage": "512 GB SSD M.2 2280 PCIe 3.0x4 NVMe"
+    },
+    "updatedAt": "2026-09-10",
+    "mfgDate": "2021 (Lanzamiento serie: 2020)"
   },
   {
     "id": "dev-lenovo-s540-hector",
@@ -113,7 +169,8 @@
     "model": "IdeaPad S540-14API",
     "type": "Laptop",
     "serial": "MP1L972A",
-    "location": "Héctor / Oficina Metagroup",
+    "assignedUser": "Héctor",
+    "location": "Oficina Metagroup",
     "imageUrl": "img/lenovo_s540.jpg",
     "driverUrl": "https://pcsupport.lenovo.com/products/laptops-and-netbooks/ideapad-s-series-laptops/s540-14api/81nh/downloads",
     "windowsUser": "metagroup\\hector",
@@ -141,7 +198,25 @@
       },
       "storage": "256 GB SSD M.2 PCIe NVMe"
     },
-    "updatedAt": "2026-09-10"
+    "updatedAt": "2026-09-10",
+    "mfgDate": "2019-06-14",
+    "images": [
+      {
+        "id": "img-hector-modelo",
+        "name": "Modelo y MTM (81NH / 81NH000PCL)",
+        "url": "img/hector_s540_modelo.jpg"
+      },
+      {
+        "id": "img-hector-serie",
+        "name": "Serie (MP1L972A) e Input 20V",
+        "url": "img/hector_s540_serie.jpg"
+      },
+      {
+        "id": "img-hector-chasis",
+        "name": "Mfg Date (19/06/14) y MO",
+        "url": "img/hector_s540_chasis.jpg"
+      }
+    ]
   },
   {
     "id": "dev-brother-hll2360dw",
@@ -149,13 +224,27 @@
     "model": "HL-L2360DW",
     "type": "Impresora",
     "serial": "E74288J6N123456",
+    "assignedUser": "",
     "location": "Oficina Central / Metagroup",
     "imageUrl": "img/brother_hl_l2360dw.jpg",
     "driverUrl": "https://support.brother.com/g/b/downloadlist.aspx?c=mx&lang=es&prod=hll2360dw_us&os=10068",
     "windowsUser": "",
     "windowsPassword": "",
     "notes": "Impresora láser monocromática dúplex con conectividad Wi-Fi y Ethernet. Compatible con paquetes de controladores Brother y CUPS.",
-    "observaciones": "Impresora compartida por red cableada y Wi-Fi en recepción. Tóner al 85%.",
-    "updatedAt": "2026-09-10"
+    "observaciones": "Impresora compartida por red cableada y Wi-Fi en recepción. Tóner al 85%.\n\nOpciones de Tóner y Precios en Chile:\n• Tóner Brother TN-2340 (Original - 1.200 pág.): Su precio ronda entre los $45.110 CLP y $59.476 CLP en tiendas como [LifeMax](https://www.lifemaxstore.cl/products/toner-brother-tn2340-original-hl-l2320d-a-l2360dw-dcp-l2520dw-a-l2540dw-mfc-l2700dw-al2740dw) o [Sodimac](https://www.sodimac.cl/sodimac-cl/articulo/146280995/Toner-Brother-Tn-2340-Original-L2320d-L2360dw-L2540/146280997).\n• Tóner Brother TN-2370 (Original - 2.600 pág.): Su precio aproximado es de $68.990 CLP a $83.490 CLP en distribuidores como [LifeMax](https://www.lifemaxstore.cl/products/toner-brother-tn2370-original-hl-l2320d-a-hl-l2360dw-dcp-l2520dw-a-dcp-l2540dw-mfc-l2700dw-a-l2740dw?srsltid=AfmBOoq5EE700oKMX1QWG93DUfMr6YTodg7cfJ26En6Ot6UPxxLnj2H7).\n• Unidad de Tambor (DR-2340): Recuerda que el tambor es independiente del tóner y rinde unas 10.000 páginas; puedes encontrar alternativas en sitios como [TodoToner](https://www.todotoner.cl/hl-l2360-1). [[1](https://www.sodimac.cl/sodimac-cl/articulo/146280995/Toner-Brother-Tn-2340-Original-L2320d-L2360dw-L2540/146280997), [2](https://listado.mercadolibre.cl/toner-brother-hl-l2360dw), [3](https://support.brother.com/g/b/cotop.aspx?c=us&lang=es&prod=hll2360dw_us), [4](https://www.todotoner.cl/hl-l2360-1)]",
+    "supplies": {
+      "toner": {
+        "model": "Brother TN-2340 / TN-2370",
+        "lastWarningDate": "",
+        "lastReplacedDate": ""
+      },
+      "drum": {
+        "model": "Brother DR-2340",
+        "lastWarningDate": "",
+        "lastReplacedDate": ""
+      }
+    },
+    "updatedAt": "2026-09-10",
+    "mfgDate": "2014 (Lanzamiento oficial)"
   }
 ]

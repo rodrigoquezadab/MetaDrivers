@@ -38,13 +38,13 @@
           <span>Copiar Markdown</span>
         </button>
 
-        <button id="btn-export-md" class="btn btn-outline" title="Descargar archivo contexto.md actualizado">
+
+        <button id="btn-open-settings" class="btn btn-outline" title="Configuración del sistema y gestión de respaldos">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-            <polyline points="7 10 12 15 17 10"></polyline>
-            <line x1="12" y1="15" x2="12" y2="3"></line>
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
           </svg>
-          <span>Descargar contexto.md</span>
+          <span>Configuración</span>
         </button>
 
         <button id="btn-add-device" class="btn btn-primary">
@@ -162,6 +162,18 @@
         </select>
       </div>
 
+      <div class="filter-group">
+        <label for="sort-select" class="filter-label">Ordenar por:</label>
+        <select id="sort-select" class="select-input">
+          <option value="category">📂 Categoría / Tipo</option>
+          <option value="brand">🏷️ Marca (A - Z)</option>
+          <option value="model">💻 Modelo (A - Z)</option>
+          <option value="age-desc">✨ Antigüedad (Más recientes)</option>
+          <option value="age-asc">⏳ Antigüedad (Más antiguos)</option>
+          <option value="location">👤 Asignado / Ubicación</option>
+        </select>
+      </div>
+
       <div class="toolbar-extra">
         <button id="btn-sync-file" class="btn btn-secondary" title="Sincronizar directamente con contexto.md">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -176,12 +188,9 @@
     <div class="results-header">
       <div class="results-count" id="results-count">Mostrando 0 equipos</div>
       <div class="quick-helpers">
-        <button id="btn-reset-demo" class="text-link-btn" title="Restaurar base de datos limpia con Brother HL-L2360DW">Reiniciar a inicial</button>
+        <button id="btn-export-json-quick" class="text-link-btn" title="Descargar copia de seguridad de tus datos actuales">💾 Respaldar equipos.json</button>
         <span class="sep">•</span>
-        <button id="btn-export-json" class="text-link-btn" title="Descargar base de datos actual en equipos.json">Descargar equipos.json</button>
-        <span class="sep">•</span>
-        <label for="import-json-input" class="text-link-btn cursor-pointer">Importar equipos.json</label>
-        <input type="file" id="import-json-input" accept=".json" style="display: none;">
+        <button id="btn-open-settings-link" class="text-link-btn" title="Abrir configuración y opciones de respaldo">⚙️ Configuración & Respaldos</button>
       </div>
     </div>
 
@@ -263,8 +272,22 @@
           </div>
 
           <div class="form-group flex-1">
-            <label for="form-location">Asignado a / Ubicación</label>
-            <input type="text" id="form-location" placeholder="Ej. Juan Pérez (Desarrollo), Sala 1...">
+            <label for="form-mfg-date">Fecha de Fabricación / Lanzamiento</label>
+            <input type="text" id="form-mfg-date" placeholder="Ej. 2019-06-14 o 2021...">
+            <span class="field-hint">Fecha de manufactura o año de lanzamiento.</span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group flex-1">
+            <label for="form-assigned-user">Usuario(s) Asignado(s) al Equipo</label>
+            <input type="text" id="form-assigned-user" placeholder="Ej. Héctor, Juan Pérez (o múltiples separados por comas)">
+            <span class="field-hint">Persona(s) asignadas actualmente o históricamente.</span>
+          </div>
+
+          <div class="form-group flex-1">
+            <label for="form-location">Ubicación / Oficina</label>
+            <input type="text" id="form-location" placeholder="Ej. Oficina Metagroup, Sala 1, Remoto...">
           </div>
         </div>
 
@@ -389,7 +412,7 @@
         </div>
 
         <!-- Credenciales Windows -->
-        <div class="credentials-fieldset">
+        <div class="credentials-fieldset" id="credentials-section">
           <div class="fieldset-title">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
@@ -399,8 +422,9 @@
           </div>
           <div class="form-row">
             <div class="form-group flex-1">
-              <label for="form-windows-user">Nombre de Usuario Windows</label>
-              <input type="text" id="form-windows-user" placeholder="Ej. jperez o metagroup\admin">
+              <label for="form-windows-user">Usuario(s) en Sistema Operativo (Windows)</label>
+              <input type="text" id="form-windows-user" placeholder="Ej. metagroup\jperez (o varios: hector, admin)">
+              <span class="field-hint">Cuentas registradas en el SO. Puedes registrar varias separadas por comas.</span>
             </div>
             <div class="form-group flex-1">
               <label for="form-windows-pass">Contraseña de Windows</label>
@@ -409,6 +433,58 @@
                 <button type="button" class="btn-toggle-password" id="btn-toggle-modal-pass" title="Mostrar/Ocultar contraseña">
                   👁️
                 </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección de Consumibles para Impresoras (Tóner y Tambor) -->
+        <div class="supplies-fieldset" id="printer-supplies-section" style="display: none;">
+          <div class="fieldset-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            <span>Registro y Control de Consumibles (Tóner y Tambor)</span>
+          </div>
+
+          <!-- Tóner -->
+          <div class="supply-form-block">
+            <div class="supply-form-heading">
+              <span class="supply-tag-badge toner-tag">Tóner</span>
+              <span class="supply-form-title">Tóner (TN-2340 / TN-2370)</span>
+            </div>
+            <div class="form-row">
+              <div class="form-group flex-1">
+                <label for="form-toner-warning-date">Último Aviso de Fin de Tóner</label>
+                <input type="date" id="form-toner-warning-date">
+                <span class="field-hint">Fecha en que la impresora alertó que el tóner está próximo a agotarse.</span>
+              </div>
+              <div class="form-group flex-1">
+                <label for="form-toner-replaced-date">Fecha Último Reemplazo de Tóner</label>
+                <input type="date" id="form-toner-replaced-date">
+                <span class="field-hint">Fecha en que se reemplazó e instaló el nuevo cartucho de tóner.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tambor -->
+          <div class="supply-form-block">
+            <div class="supply-form-heading">
+              <span class="supply-tag-badge drum-tag">Tambor</span>
+              <span class="supply-form-title">Unidad de Tambor (DR-2340)</span>
+            </div>
+            <div class="form-row">
+              <div class="form-group flex-1">
+                <label for="form-drum-warning-date">Último Aviso de Fin de Tambor</label>
+                <input type="date" id="form-drum-warning-date">
+                <span class="field-hint">Fecha de alerta para cambio de tambor (vida útil ~10.000 páginas).</span>
+              </div>
+              <div class="form-group flex-1">
+                <label for="form-drum-replaced-date">Fecha Último Reemplazo de Tambor</label>
+                <input type="date" id="form-drum-replaced-date">
+                <span class="field-hint">Fecha en que se instaló la nueva unidad de tambor (drum).</span>
               </div>
             </div>
           </div>
@@ -432,6 +508,184 @@
     </div>
   </div>
 
+  <!-- Vista de Ficha Técnica Completa a Pantalla Completa (Full Page View) -->
+  <div class="device-fullpage-view" id="device-detail-modal" role="dialog" aria-modal="true" aria-labelledby="detail-modal-title">
+    <div class="device-fullpage-container">
+      
+      <!-- Barra Superior Fija (Sticky Topbar) -->
+      <header class="fullpage-topbar">
+        <div class="fullpage-topbar-left">
+          <button type="button" class="btn btn-secondary btn-back-inventory" id="detail-modal-close-btn" title="Volver al inventario">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>Volver al Inventario</span>
+          </button>
+          
+          <div class="fullpage-header-titles">
+            <div class="brand-eyebrow" id="detail-modal-eyebrow" style="color: #38bdf8;">FICHA TÉCNICA DEL EQUIPO</div>
+            <h2 class="fullpage-header-title" id="detail-modal-title">Detalle del Equipo</h2>
+          </div>
+        </div>
+
+        <div class="fullpage-topbar-right">
+          <div class="detail-user-pill" id="detail-modal-user">👤 Asignado a: General</div>
+          
+          <button type="button" class="btn btn-outline" id="detail-modal-edit-btn" title="Editar todos los datos y fechas en un solo lugar">
+            ✏️ Editar Equipo
+          </button>
+
+          <a id="detail-modal-driver-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: linear-gradient(135deg, #0284c7, #4f46e5); text-decoration: none;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+            <span>Drivers & Soporte</span>
+          </a>
+
+          <button class="icon-btn modal-close" id="detail-modal-close" aria-label="Cerrar ficha">&times;</button>
+        </div>
+      </header>
+
+      <!-- Cuerpo de la Página Completa -->
+      <main class="fullpage-body-container">
+        <div class="detail-modal-body" id="detail-modal-body">
+          <!-- Contenido dinámico generado por openDeviceDetailModal en app.js -->
+        </div>
+
+        <div class="fullpage-bottom-actions">
+          <button type="button" class="btn btn-secondary" id="detail-modal-bottom-back-btn">
+            ← Volver al Inventario
+          </button>
+          <button type="button" class="btn btn-outline" id="detail-modal-bottom-edit-btn">
+            ✏️ Editar este Equipo
+          </button>
+          <a id="detail-modal-bottom-driver-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: linear-gradient(135deg, #0284c7, #4f46e5); text-decoration: none;">
+            🌐 Descargar Drivers Oficiales
+          </a>
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+  <!-- Modal de Configuración y Gestión de Respaldos -->
+  <div class="modal-overlay" id="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settings-modal-title">
+    <div class="modal-card modal-card-settings">
+      <div class="modal-header">
+        <div>
+          <div class="brand-eyebrow" style="color: #38bdf8;">PANEL DE CONTROL & DATOS</div>
+          <h2 class="modal-title" id="settings-modal-title">Configuración & Respaldos</h2>
+        </div>
+        <button class="icon-btn modal-close" id="settings-modal-close" aria-label="Cerrar modal">&times;</button>
+      </div>
+
+      <div class="settings-content">
+        <!-- Estado de Almacenamiento Actual -->
+        <div class="settings-group-block">
+          <div class="settings-block-header">
+            <span class="settings-block-title">📊 Estado del Almacenamiento Local</span>
+          </div>
+          <p class="settings-desc">
+            Tus datos están protegidos y activos en el almacenamiento local de este navegador. Todas las modificaciones se guardan automáticamente.
+          </p>
+          <div class="settings-status-box">
+            <div class="status-indicator-dot"></div>
+            <div>
+              <strong id="settings-devices-count">6 equipos</strong> en uso activo.
+              <span style="color: var(--text-dim); font-size: 0.78rem; display: block;">Clave de sesión: <code id="settings-storage-key">metagroup_devices_inventory_v16</code></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copia de Seguridad Personal -->
+        <div class="settings-group-block">
+          <div class="settings-block-header">
+            <span class="settings-block-title">💾 Copia de Seguridad de tus Datos</span>
+          </div>
+          <p class="settings-desc">
+            Descarga un archivo JSON con todo tu inventario actual para resguardo, o restaura una copia previa desde tu disco.
+          </p>
+          <div class="settings-actions-row">
+            <button type="button" class="btn btn-secondary" id="btn-export-json">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Descargar equipos.json</span>
+            </button>
+
+            <label for="import-json-input" class="btn btn-outline cursor-pointer" style="margin: 0;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+              <span>Cargar desde archivo .json</span>
+            </label>
+            <input type="file" id="import-json-input" accept=".json" style="display: none;">
+          </div>
+        </div>
+
+        <!-- Respaldo del Proyecto GitHub -->
+        <div class="settings-group-block">
+          <div class="settings-block-header">
+            <span class="settings-block-title">🐙 Respaldo Oficial del Proyecto (GitHub)</span>
+          </div>
+          <p class="settings-desc">
+            Trae y sincroniza la plantilla base oficial provista en el proyecto de GitHub (archivo <code>equipos.json</code> del repositorio).
+          </p>
+          <div class="settings-action-box">
+            <button type="button" class="btn btn-primary" id="btn-fetch-repo-backup" style="background: #0284c7; border-color: #38bdf8; font-weight: 600;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="1 4 1 10 7 10"></polyline>
+                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+              </svg>
+              <span>Traer Respaldo Oficial de GitHub</span>
+            </button>
+            <span class="field-hint" style="margin-top: 0.45rem; display: block;">
+              ℹ️ Se te solicitará confirmación explícita para asegurar que no pierdas cambios no guardados.
+            </span>
+          </div>
+        </div>
+
+        <!-- Zona de Seguridad / Restablecimiento Protegido -->
+        <div class="settings-group-block danger-block">
+          <div class="settings-block-header">
+            <span class="settings-block-title" style="color: #f87171;">🛡️ Zona Protegida: Restablecimiento de Fábrica</span>
+          </div>
+          <p class="settings-desc" style="color: #94a3b8;">
+            Restaura la aplicación a su estado de fábrica inicial. Para garantizar que no se borren datos por error mientras usas la aplicación, requiere escribir una confirmación de seguridad.
+          </p>
+          <button type="button" class="btn btn-danger-outline" id="btn-factory-reset">
+            ⚠️ Restablecer Inventario de Fábrica
+          </button>
+        </div>
+      </div>
+
+      <div class="modal-actions" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
+        <button type="button" class="btn btn-secondary" id="btn-close-settings-modal" style="margin-left: auto;">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Previsualización de Fotografía Ampliada -->
+  <div class="modal-overlay" id="photo-preview-modal" role="dialog" aria-modal="true" aria-labelledby="photo-preview-title" style="z-index: 9999;">
+    <div class="modal-card modal-card-photo">
+      <div class="modal-header" style="padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
+        <div class="brand-eyebrow" id="photo-preview-title" style="color: #38bdf8;">FOTOGRAFÍA DEL EQUIPO</div>
+        <button class="icon-btn modal-close" id="photo-preview-close" aria-label="Cerrar visor">&times;</button>
+      </div>
+      <div class="photo-preview-container">
+        <img id="photo-preview-img" src="" alt="Fotografía">
+        <div id="photo-preview-tag" class="photo-preview-tag-overlay"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notification -->
   <div id="toast" class="toast" role="alert" aria-live="polite">
     <div class="toast-icon">✓</div>
@@ -440,8 +694,7 @@
 
   <footer class="app-footer">
     <div class="footer-content">
-      <p><strong>Metagroup Office Tech Management</strong> • Registro sincronizado con <code>contexto.md</code></p>
-      <p class="text-muted">Desarrollado para la gestión de infraestructura y controladores de oficina.</p>
+      <p class="text-muted">MetaDrivers Hub</p>
     </div>
   </footer>
 
